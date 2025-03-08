@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Sistema_de_Jogo"/>
+        <attribute name="authors" value="franb"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-03-07 11:20:50 "/>
+        <attribute name="created" value="ZnJhbmI7Q1JBS0FUT0E7MjAyNS0wMy0wNzsiMTA6NTM6NDMgIjsyMjkz"/>
+        <attribute name="edited" value="ZnJhbmI7Q1JBS0FUT0E7MjAyNS0wMy0wNzsiMTE6MjA6NTAgIjsxOzIzOTQ="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <call expression="mainlcatalog"/>
+            <declare name="choice" type="Integer" array="False" size=""/>
+            <input variable="choice"/>
+            <if expression="choice == 1">
+                <then>
+                    <call expression="snake"/>
+                </then>
+                <else>
+                    <if expression="choice == 2">
+                        <then>
+                            <call expression="questionsAnswers"/>
+                        </then>
+                        <else>
+                            <if expression="choice == 3">
+                                <then>
+                                    <call expression="slimeWar"/>
+                                </then>
+                                <else>
+                                    <output expression="&quot;Apreciate your visit&quot;" newline="True"/>
+                                    <output expression="&quot;bye :)&quot;" newline="True"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="mainlcatalog" type="None" variable="">
+        <parameters/>
+        <body>
+            <output expression="&quot;Made by Francisco Begot and Bernardo lopes from CC SUB A&quot;" newline="True"/>
+            <output expression="&quot;&quot;" newline="True"/>
+            <output expression="&quot;--------------------------------------------------------&quot;" newline="True"/>
+            <output expression="&quot;---------Welcome to the world of games----------&quot;" newline="True"/>
+            <output expression="&quot;--------------------------------------------------------&quot;" newline="True"/>
+            <output expression="&quot;&quot;" newline="True"/>
+            <output expression="&quot; Select one of these 3 wonderfuls&quot;" newline="True"/>
+            <output expression="&quot;&quot;" newline="True"/>
+            <output expression="&quot;1 for snake in the box&quot;" newline="True"/>
+            <output expression="&quot;&quot;" newline="True"/>
+            <output expression="&quot;2 for questions and answers&quot;" newline="True"/>
+            <output expression="&quot;&quot;" newline="True"/>
+            <output expression="&quot;3 for slime war&quot;" newline="True"/>
+            <output expression="&quot;&quot;" newline="True"/>
+            <output expression="&quot;4 or any other number to quit the world of games&quot;" newline="True"/>
+        </body>
+    </function>
+    <function name="snake" type="None" variable="">
+        <parameters/>
+        <body>
+            <call expression="snakePlayers"/>
+        </body>
+    </function>
+    <function name="snakePlayers" type="None" variable="">
+        <parameters/>
+        <body>
+            <output expression="&quot;Welcome to snake game&quot;" newline="True"/>
+            <output expression="&quot;Would you be lucky to not fall in the snake box?&quot;" newline="True"/>
+            <output expression="&quot;Chose your player!&quot;" newline="True"/>
+            <output expression="&quot;0 for Francisco&quot;" newline="True"/>
+            <output expression="&quot;1 for Bernardo&quot;" newline="True"/>
+            <output expression="&quot;2 for alessandra&quot;" newline="True"/>
+            <output expression="&quot;3 for Pedro&quot;" newline="True"/>
+            <output expression="&quot;4 for casseb&quot;" newline="True"/>
+            <output expression="&quot;5 for poliana&quot;" newline="True"/>
+            <output expression="&quot;6 for erick&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
