@@ -1,0 +1,252 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Sistema_de_Jogo"/>
+        <attribute name="authors" value="franb"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-03-15 01:40:04 "/>
+        <attribute name="created" value="ZnJhbmI7Q1JBS0FUT0E7MjAyNS0wMy0wNzsiMTA6NTM6NDMgIjsyMjkz"/>
+        <attribute name="edited" value="ZnJhbmI7Q1JBS0FUT0E7MjAyNS0wMy0wNzsiMTE6MjA6NTAgIjsxOzIzOTQ="/>
+        <attribute name="edited" value="YmVybmE7QkVSOzIwMjUtMDMtMDk7IjA1OjMyOjExICI7MTtiZXJuYTtCRVI7MjAyNS0wMy0wNzsiMTA6NDA6MzggIjtQZXJndW50YV9SZXNwb3N0YS5mcHJnOzYzMzc="/>
+        <attribute name="edited" value="YmVybmE7QkVSOzIwMjUtMDMtMTU7IjAxOjM5OjE4ICI7MjtmcmFuYjtDUkFLQVRPQTsyMDI1LTAzLTA3OyIxMDo1Mzo0MyAiO1Npc3RlbWFfZGVfSm9nbyAoNCkuZnByZzs2NjEw"/>
+        <attribute name="edited" value="YmVybmE7QkVSOzIwMjUtMDMtMTU7IjAxOjQwOjA0ICI7NTsyMDMx"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <call expression="mainlcatalog"/>
+            <declare name="choice" type="Integer" array="False" size=""/>
+            <input variable="choice"/>
+            <if expression="choice == 1">
+                <then>
+                    <call expression="snake"/>
+                </then>
+                <else>
+                    <if expression="choice == 2">
+                        <then>
+                            <call expression="questionsAnswers"/>
+                        </then>
+                        <else>
+                            <if expression="choice == 3">
+                                <then>
+                                    <call expression="slimeWar"/>
+                                </then>
+                                <else>
+                                    <output expression="&quot;Apreciate your visit&quot;" newline="True"/>
+                                    <output expression="&quot;bye :)&quot;" newline="True"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="mainlcatalog" type="None" variable="">
+        <parameters/>
+        <body>
+            <output expression="&quot;Made by Francisco Begot and Bernardo lopes from CC SUB A&quot;" newline="True"/>
+            <output expression="&quot;&quot;" newline="True"/>
+            <output expression="&quot;--------------------------------------------------------&quot;" newline="True"/>
+            <output expression="&quot;---------Welcome to the world of games----------&quot;" newline="True"/>
+            <output expression="&quot;--------------------------------------------------------&quot;" newline="True"/>
+            <output expression="&quot;&quot;" newline="True"/>
+            <output expression="&quot; Select one of these 3 wonderfuls&quot;" newline="True"/>
+            <output expression="&quot;&quot;" newline="True"/>
+            <output expression="&quot;1 for snake in the box&quot;" newline="True"/>
+            <output expression="&quot;&quot;" newline="True"/>
+            <output expression="&quot;2 for questions and answers&quot;" newline="True"/>
+            <output expression="&quot;&quot;" newline="True"/>
+            <output expression="&quot;3 for slime war&quot;" newline="True"/>
+            <output expression="&quot;&quot;" newline="True"/>
+            <output expression="&quot;4 or any other number to quit the world of games&quot;" newline="True"/>
+        </body>
+    </function>
+    <function name="questionsAnswers" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="r1, r2, r3, r4, r5, tn" type="String" array="False" size=""/>
+            <output expression="&quot;-------------------------------------------Quiz game computer science-------------------------------------------&quot;" newline="True"/>
+            <output expression="&quot;----OBS: TYPE IN LOWERCASE THE LETTER OF THE ALTERNATIVE YOU CONSIDER TRUE.----&quot;" newline="True"/>
+            <output expression="&quot;1. What does the acronym 'HTTP' stand for on the web?&quot;" newline="True"/>
+            <output expression="&quot;a)  Hypertext Transfer Protocol&quot;" newline="True"/>
+            <output expression="&quot;b) Hyper Transfer Text Protocol&quot;" newline="True"/>
+            <output expression="&quot;c) Home Text Transfer Protocol&quot;" newline="True"/>
+            <output expression="&quot;d) Hyper Terminal Transfer Protocol&quot;" newline="True"/>
+            <input variable="r1"/>
+            <if expression="r1 == &quot;a&quot;">
+                <then>
+                    <output expression="&quot;correct!&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;Unfortunately, you are wrong :(&quot;" newline="True"/>
+                </else>
+            </if>
+            <output expression="&quot;2. What is the function of a DNS server in a network?&quot;" newline="True"/>
+            <output expression="&quot;a) To assign IP addresses to devices&quot;" newline="True"/>
+            <output expression="&quot;b) To translate domain names into IP addresses&quot;" newline="True"/>
+            <output expression="&quot;c) To secure the network from external attacks&quot;" newline="True"/>
+            <output expression="&quot;d) To store files and data on the network&quot;" newline="True"/>
+            <input variable="r2"/>
+            <if expression="r2 == &quot;b&quot;">
+                <then>
+                    <output expression="&quot;correct!&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;Unfortunately, you are wrong :(&quot;" newline="True"/>
+                </else>
+            </if>
+            <output expression="&quot;3. What is the correct syntax for declaring a pointer in C?&quot;" newline="True"/>
+            <output expression="&quot;a) int *p;&quot;" newline="True"/>
+            <output expression="&quot;b) pointer int p;&quot;" newline="True"/>
+            <output expression="&quot;c) int pointer *p;&quot;" newline="True"/>
+            <output expression="&quot;d) *int p;&quot;" newline="True"/>
+            <input variable="r3"/>
+            <if expression="r3 == &quot;a&quot;">
+                <then>
+                    <output expression="&quot;correct!&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;Unfortunately, you are wrong :(&quot;" newline="True"/>
+                </else>
+            </if>
+            <output expression="&quot;4. How would the %d print the result of the division of these two integer numbers? ( 5 / 2 )&quot;" newline="True"/>
+            <output expression="&quot;a) 2.50&quot;" newline="True"/>
+            <output expression="&quot;b) 3&quot;" newline="True"/>
+            <output expression="&quot;c) 2&quot;" newline="True"/>
+            <output expression="&quot;d) 10&quot;" newline="True"/>
+            <input variable="r4"/>
+            <if expression="r4 == &quot;c&quot;">
+                <then>
+                    <output expression="&quot;correct!&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;Unfortunately, you are wrong :(&quot;" newline="True"/>
+                </else>
+            </if>
+            <output expression="&quot;5. What is the purpose of an operating system?&quot;" newline="True"/>
+            <output expression="&quot;a) To process data in a database&quot;" newline="True"/>
+            <output expression="&quot;b) To design user interfaces&quot;" newline="True"/>
+            <output expression="&quot;c) To connect to the internet&quot;" newline="True"/>
+            <output expression="&quot;d) To execute applications and manage hardware resources&quot;" newline="True"/>
+            <input variable="r5"/>
+            <if expression="r5 == &quot;d&quot;">
+                <then>
+                    <output expression="&quot;correct!&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;Unfortunately, you are wrong :(&quot;" newline="True"/>
+                </else>
+            </if>
+            <output expression="&quot;try again or go back to main menu? (1) to try again/ (2) to go back to main menu&quot;" newline="True"/>
+            <input variable="tn"/>
+            <if expression="tn == &quot;1&quot;">
+                <then>
+                    <call expression="questionsAnswers"/>
+                </then>
+                <else>
+                    <call expression="mainlcatalog"/>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="snake" type="None" variable="">
+        <parameters/>
+        <body>
+            <call expression="snakePlayers"/>
+            <call expression="snakeGame"/>
+        </body>
+    </function>
+    <function name="snakeGame" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="try" type="String" array="False" size=""/>
+            <assign variable="try" expression="&quot;yes&quot;"/>
+            <while expression="try == &quot;yes&quot;">
+                <declare name="boxposition, snakeposition, chooise" type="Integer" array="False" size=""/>
+                <assign variable="boxposition" expression="Random(5)"/>
+                <assign variable="snakeposition" expression="Random(5)"/>
+                <while expression="boxposition=snakeposition">
+                    <assign variable="snakeposition" expression="Random(5)"/>
+                </while>
+                <output expression="&quot;Chose (with carefull) the box 0-4&quot;" newline="True"/>
+                <input variable="chooise"/>
+                <if expression="chooise == boxposition">
+                    <then>
+                        <output expression="&quot;That was luck!&quot;" newline="True"/>
+                        <assign variable="try" expression="&quot;no&quot;"/>
+                    </then>
+                    <else>
+                        <if expression="chooise == snakeposition">
+                            <then>
+                                <output expression="&quot;The snake goth you!!&quot;" newline="True"/>
+                                <assign variable="try" expression="&quot;no&quot;"/>
+                            </then>
+                            <else>
+                                <output expression="&quot;Empty box, next turn&quot;" newline="True"/>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+            </while>
+            <output expression="&quot;Wanna play again? (yes/no)&quot;" newline="True"/>
+            <input variable="try"/>
+            <if expression="try == &quot;yes&quot;">
+                <then>
+                    <call expression="snakeGame"/>
+                </then>
+                <else>
+                    <output expression="&quot;Thanks for playing&quot;" newline="True"/>
+                    <call expression="Main"/>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="snakePlayers" type="None" variable="">
+        <parameters/>
+        <body>
+            <output expression="&quot;Welcome to snake game&quot;" newline="True"/>
+            <output expression="&quot;Would you be lucky to not fall in the snake box?&quot;" newline="True"/>
+            <output expression="&quot;Chose your player!&quot;" newline="True"/>
+            <output expression="&quot;0 for Francisco&quot;" newline="True"/>
+            <output expression="&quot;1 for Bernardo&quot;" newline="True"/>
+            <output expression="&quot;2 for alessandra&quot;" newline="True"/>
+            <output expression="&quot;3 for Pedro&quot;" newline="True"/>
+            <output expression="&quot;4 for casseb&quot;" newline="True"/>
+            <output expression="&quot;5 for poliana&quot;" newline="True"/>
+            <output expression="&quot;6 for erick&quot;" newline="True"/>
+            <declare name="playerName" type="String" array="True" size="7"/>
+            <declare name="player1, player2" type="Integer" array="False" size=""/>
+            <assign variable="playerName[0]" expression="&quot;Francisco&quot;"/>
+            <assign variable="playerName[1]" expression="&quot;Bernado&quot;"/>
+            <assign variable="playerName[2]" expression="&quot;Alessandra&quot;"/>
+            <assign variable="playerName[3]" expression="&quot;Pedro&quot;"/>
+            <assign variable="playerName[4]" expression="&quot;Casseb&quot;"/>
+            <assign variable="playerName[5]" expression="&quot;Poliana&quot;"/>
+            <assign variable="playerName[6]" expression="&quot;Erick&quot;"/>
+            <input variable="player1"/>
+            <output expression="&quot;Nice! Select your second player.&quot;" newline="True"/>
+            <input variable="player2"/>
+            <output expression="&quot;Your chooices was:&quot;" newline="True"/>
+            <output expression="&quot;First player:&quot;&amp;playername[player1]" newline="True"/>
+            <output expression="&quot;&quot;" newline="True"/>
+            <output expression="&quot;Second player:&quot;&amp;playerName[player2]" newline="True"/>
+            <output expression="&quot;&quot;" newline="True"/>
+            <output expression="&quot;Now, we will raffle the player&quot;" newline="True"/>
+            <output expression="&quot;Who will play????&quot;" newline="True"/>
+            <output expression="&quot;&quot;" newline="True"/>
+            <output expression="&quot;The player is....&quot;" newline="True"/>
+            <declare name="raffle" type="Integer" array="False" size=""/>
+            <assign variable="raffle" expression="Random(2)"/>
+            <output expression="&quot;&quot;" newline="True"/>
+            <if expression="raffle == 1">
+                <then>
+                    <output expression="&quot;&quot;&amp;playerName[player1]" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;&quot;&amp;playerName[player2]" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
