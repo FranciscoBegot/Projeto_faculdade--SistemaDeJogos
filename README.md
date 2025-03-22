@@ -1,6 +1,6 @@
 # Sistema de Jogos - Flowgorithm
--
--
+
+
 # Descrição 
 Este projeto consiste em um sistema de três jogos desenvolvidos no Flowgorithm:
 
@@ -11,13 +11,12 @@ SlimeWar
 Perguntas e Respostas
 
 O objetivo do projeto é explorar lógica de programação e fluxogramas para criar jogos interativos.
-##############################################################################
+
 
 # Tecnologias Utilizadas
 
 Flowgorithm
 Browser (para pesquisas)
-###############################################################################
 
 # Como Executar
 
@@ -25,7 +24,7 @@ Abra os arquivos .fprg no Flowgorithm.
 
 Execute o fluxograma para jogar cada um dos três jogos.
 
-################################################################################
+
 
 # Autores
 
@@ -35,7 +34,7 @@ Bernardo Lopes
 
 Turma: Ciência da Computação A (Manhã)
 
-#################################################################################
+
 
 # Referências
 Documentação oficial do flowgorithm: https://www.flowgorithm.org/documentation/
