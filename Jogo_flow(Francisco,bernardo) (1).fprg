@@ -169,6 +169,373 @@
             <output expression="&quot;&#9679; If a Slime reaches a rage level higher than 5, it disintegrates&quot;" newline="True"/>
             <output expression="&quot;&#9679; The player may choose to split a Slime, transferring part of its rage to a new Slime (respecting the limit of two Slimes per player)&quot;" newline="True"/>
             <output expression="&quot;Lets Start!!&quot;" newline="True"/>
+<while expression="(gosma1&gt; 0) AND (gosma2 &gt; 0)">
+    <output expression="&quot;TURN OF PLAYER 1&quot;" newline="True"/>
+    <output expression="&quot;Slime Player 1 = &quot; &amp;gosma1" newline="True"/>
+    <if expression="furia1jog1 == 0">
+        <then>
+            <output expression="&quot;Fury Slime 2 = &quot;  &amp;furia2jog1" newline="True"/>
+        </then>
+        <else>
+            <if expression="furia2jog1 == 0">
+                <then>
+                    <output expression="&quot;Fury Slime 1 = &quot; &amp;furia1jog1" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;Fury Slime 1 = &quot; &amp;furia1jog1" newline="True"/>
+                    <output expression="&quot;Fury Slime 2 = &quot;  &amp;furia2jog1" newline="True"/>
+                </else>
+            </if>
+        </else>
+    </if>
+    <output expression="&quot;Choose: (1) Attack / (2) Split&quot;" newline="True"/>
+    <input variable="escolha"/>
+    <if expression="escolha == 1">
+        <then>
+            <if expression="furia1jog2 == 0">
+                <then>
+                    <output expression="&quot;Attack Slime 2 of J2(2)&quot;" newline="True"/>
+                </then>
+                <else>
+                    <if expression="furia2jog2 == 0">
+                        <then>
+                            <output expression="&quot;Attack Slime 1 of J2(1)&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <output expression="&quot;Attack One Of The Slimes Of Player 2&quot;" newline="True"/>
+                            <output expression="&quot;Attack Slime 1 (1) / Attack Slime 2 (2)&quot;" newline="True"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <input variable="escolha"/>
+            <if expression="escolha == 1">
+                <then>
+                    <output expression="&quot;You Have Fury To Attack&quot;" newline="True"/>
+                    <if expression="furia1jog1 == 0">
+                        <then>
+                            <output expression="&quot;Fury of Slime 2: &quot;&amp;furia2jog1" newline="True"/>
+                            <output expression="&quot;Attack with Fury (2)&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <if expression="furia2jog1 == 0">
+                                <then>
+                                    <output expression="&quot;Fury of Slime 1: &quot;&amp;furia1jog1" newline="True"/>
+                                    <output expression="&quot;Attack with Fury (1)&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <output expression="&quot;Fury of Slime 1: &quot;&amp;furia1jog1" newline="True"/>
+                                    <output expression="&quot;Fury of Slime 2: &quot;&amp;furia2jog1" newline="True"/>
+                                    <output expression="&quot;Attack with Fury 1 (1) or Fury (2)?&quot;" newline="True"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                    <input variable="escolha"/>
+                    <if expression="escolha == 1">
+                        <then>
+                            <assign variable="furia1jog2" expression="furia1jog2 + furia1jog1"/>
+                        </then>
+                        <else>
+                            <assign variable="furia1jog2" expression="furia1jog2 + furia2jog1"/>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <output expression="&quot;You Have Fury To Attack&quot;" newline="True"/>
+                    <if expression="furia1jog1 == 0">
+                        <then>
+                            <output expression="&quot;Fury of Slime 2: &quot;&amp;furia2jog1" newline="True"/>
+                            <output expression="&quot;Attack with Fury (2)&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <if expression="furia2jog1 == 0">
+                                <then>
+                                    <output expression="&quot;Fury of Slime 1: &quot;&amp;furia1jog1" newline="True"/>
+                                    <output expression="&quot;Attack with Fury (1)&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <output expression="&quot;Fury of Slime 1: &quot;&amp;furia1jog1" newline="True"/>
+                                    <output expression="&quot;Fury of Slime 2: &quot;&amp;furia2jog1" newline="True"/>
+                                    <output expression="&quot;Attack with Fury 1 (1) / Fury (2)?&quot;" newline="True"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                    <input variable="escolha"/>
+                    <if expression="escolha == 1">
+                        <then>
+                            <assign variable="furia2jog2" expression="furia2jog2 + furia1jog1"/>
+                        </then>
+                        <else>
+                            <assign variable="furia2jog2" expression="furia2jog2 + furia2jog1"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <output expression="&quot;Player 1 Attacks! Transferring Fury...&quot;" newline="True"/>
+        </then>
+        <else>
+            <output expression="&quot;Split Fury of Slime 1 to Slime 2? (1)&quot;" newline="True"/>
+            <output expression="&quot;Split Fury of Slime 2 to Slime 1? (2)&quot;" newline="True"/>
+            <input variable="escolha"/>
+            <if expression="furia1jog1 &lt; 5 &amp;&amp; furia2jog1 &lt; 5">
+                <then>
+                    <output expression="&quot;Fury Slime 1 J1: &quot; &amp;furia1jog1" newline="True"/>
+                    <output expression="&quot;Fury Slime 2 J1: &quot; &amp;furia2jog1" newline="True"/>
+                    <if expression="escolha == 1">
+                        <then>
+                            <output expression="&quot;How Much Fury Do You Want To Transfer To Slime 2?&quot;" newline="True"/>
+                            <input variable="escolha"/>
+                            <if expression="escolha &gt; furia1jog1 &amp;&amp; escolha &gt; furia2jog1">
+                                <then>
+                                    <output expression="&quot;You Do Not Have Enough Fury&quot;" newline="True"/>
+                                    <do expression="escolha &gt; furia1jog1 &amp;&amp; escolha &gt; furia2jog1">
+                                        <output expression="&quot;How Much Fury Do You Want To Transfer To Slime 2?&quot;" newline="True"/>
+                                        <input variable="escolha"/>
+                                    </do>
+                                </then>
+                                <else/>
+                            </if>
+                            <output expression="&quot;Player 1 Split! Dividing Fury...&quot;" newline="True"/>
+                            <assign variable="furia1jog1" expression="furia1jog1 - escolha"/>
+                            <assign variable="furia2jog1" expression="furia2jog1 + escolha"/>
+                        </then>
+                        <else>
+                            <output expression="&quot;How Much Fury Do You Want To Transfer To Slime 1?&quot;" newline="True"/>
+                            <input variable="escolha"/>
+                            <if expression="escolha &gt; furia1jog1 &amp;&amp; escolha &gt; furia2jog1">
+                                <then>
+                                    <output expression="&quot;You Do Not Have Enough Fury&quot;" newline="True"/>
+                                    <do expression="escolha &gt; furia1jog1 &amp;&amp; escolha &gt; furia2jog1">
+                                        <output expression="&quot;How Much Fury Do You Want To Transfer To Slime 1?&quot;" newline="True"/>
+                                        <input variable="escolha"/>
+                                    </do>
+                                </then>
+                                <else/>
+                            </if>
+                            <output expression="&quot;Player 1 Split! Dividing Fury...&quot;" newline="True"/>
+                            <assign variable="furia2jog1" expression="furia2jog1 - escolha"/>
+                            <assign variable="furia1jog1" expression="furia1jog1 + escolha"/>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <output expression="&quot;IMPOSSIBLE TO SPLIT!!&quot;" newline="True"/>
+                    <output expression="&quot;Your Fury Is Too High To Split, You Cannot Commit Suicide!!&quot;" newline="True"/>
+                </else>
+            </if>
+        </else>
+    </if>
+    <if expression="furia1jog2 &gt; 5">
+        <then>
+            <output expression="&quot;One Slime Of Player 2 Disintegrated&quot;" newline="True"/>
+            <assign variable="gosma2" expression="gosma2 - 1"/>
+            <assign variable="furia1jog2" expression="0"/>
+        </then>
+        <else>
+            <if expression="furia2jog2 &gt; 5">
+                <then>
+                    <output expression="&quot;One Slime Of Player 2 Disintegrated&quot;" newline="True"/>
+                    <assign variable="gosma2" expression="gosma2 - 1"/>
+                    <assign variable="furia2jog2" expression="0"/>
+                </then>
+                <else/>
+            </if>
+        </else>
+    </if>
+    <if expression="gosma2 = 0">
+        <then>
+            <output expression="&quot;Player 1 Won!!!&quot;" newline="True"/>
+            <call expression="Again"/>
+        </then>
+        <else/>
+    </if>
+    <output expression="&quot;Turn Of Player 2&quot;" newline="True"/>
+    <output expression="&quot;Slime Player 2 = &quot; &amp;gosma2" newline="True"/>
+    <if expression="furia1jog2 == 0">
+        <then>
+            <output expression="&quot;Fury Slime 2 = &quot;  &amp;furia2jog2" newline="True"/>
+        </then>
+        <else>
+            <if expression="furia2jog2 == 0">
+                <then>
+                    <output expression="&quot;Fury Slime 1 = &quot; &amp;furia1jog2" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;Fury Slime 1 = &quot; &amp;furia1jog2" newline="True"/>
+                    <output expression="&quot;Fury Slime 2 = &quot;  &amp;furia2jog2" newline="True"/>
+                </else>
+            </if>
+        </else>
+    </if>
+    <output expression="&quot;Choose: (1) Attack / (2) Split&quot;" newline="True"/>
+    <input variable="escolha"/>
+    <if expression="escolha = 1">
+        <then>
+            <if expression="furia1jog1 == 0">
+                <then>
+                    <output expression="&quot;Attack Slime 2 of J1(2)&quot;" newline="True"/>
+                </then>
+                <else>
+                    <if expression="furia2jog2 == 0">
+                        <then>
+                            <output expression="&quot;Attack Slime 1 of J1(1)&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <output expression="&quot;Attack One Of The Slimes Of Player 2&quot;" newline="True"/>
+                            <output expression="&quot;Attack Slime 1 (1) / Attack Slime 2 (2)&quot;" newline="True"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <input variable="escolha"/>
+            <if expression="escolha == 1">
+                <then>
+                    <output expression="&quot;You Have Fury To Attack&quot;" newline="True"/>
+                    <if expression="furia1jog2 == 0">
+                        <then>
+                            <output expression="&quot;Fury of Slime 2: &quot;&amp;furia2jog2" newline="True"/>
+                            <output expression="&quot;Attack with Fury (2)&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <if expression="furia2jog2 == 0">
+                                <then>
+                                    <output expression="&quot;Fury of Slime 1: &quot;&amp;furia1jog2" newline="True"/>
+                                    <output expression="&quot;Attack with Fury (1)&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <output expression="&quot;Fury of Slime 1: &quot;&amp;furia1jog2" newline="True"/>
+                                    <output expression="&quot;Fury of Slime 2: &quot;&amp;furia2jog2" newline="True"/>
+                                    <output expression="&quot;Attack with Fury 1( 1) / Fury with 2 (2) ? &quot;" newline="True"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                    <input variable="escolha"/>
+                    <if expression="escolha == 1">
+                        <then>
+                            <assign variable="furia1jog1" expression="furia1jog1 + furia1jog2"/>
+                        </then>
+                        <else>
+                            <assign variable="furia1jog1" expression="furia1jog1 + furia2jog2"/>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <output expression="&quot;You Have Fury To Attack&quot;" newline="True"/>
+                    <if expression="furia1jog2 == 0">
+                        <then>
+                            <output expression="&quot;Fury of Slime 2: &quot;&amp;furia2jog2" newline="True"/>
+                            <output expression="&quot;Attack with Fury (2)&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <if expression="furia2jog2 == 0">
+                                <then>
+                                    <output expression="&quot;Fury of Slime 1: &quot;&amp;furia1jog2" newline="True"/>
+                                    <output expression="&quot;Attack with Fury (1)&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <output expression="&quot;Fury of Slime 1: &quot;&amp;furia1jog2" newline="True"/>
+                                    <output expression="&quot;Fury of Slime 2: &quot;&amp;furia2jog2" newline="True"/>
+                                    <output expression="&quot;Attack with Fury 1( 1) / Fury with 2 (2) ? &quot;" newline="True"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                    <input variable="escolha"/>
+                    <if expression="escolha == 1">
+                        <then>
+                            <assign variable="furia2jog1" expression="furia2jog1 + furia1jog2"/>
+                        </then>
+                        <else>
+                            <assign variable="furia2jog1" expression="furia2jog1 + furia2jog2"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <output expression="&quot;Player 2 Attacks!! Transferring Fury...&quot;" newline="True"/>
+        </then>
+        <else>
+            <output expression="&quot;Split Fury of Slime 1 to Slime 2? (1)&quot;" newline="True"/>
+            <output expression="&quot;Split Fury of Slime 2 to Slime 1? (2)&quot;" newline="True"/>
+            <if expression="furia1jog2 &lt; 5 &amp;&amp; furia2jog2 &lt; 5">
+                <then>
+                    <output expression="&quot;Fury Slime 1 J2: &quot; &amp;furia1jog2" newline="True"/>
+                    <output expression="&quot;Fury Slime 2 J2: &quot; &amp;furia2jog2" newline="True"/>
+                    <if expression="escolha == 1">
+                        <then>
+                            <output expression="&quot;How Much Fury Do You Want To Transfer To Slime 2?&quot;" newline="True"/>
+                            <input variable="escolha"/>
+                            <if expression="escolha &gt; furia1jog2 &amp;&amp; escolha &gt; furia2jog2">
+                                <then>
+                                    <output expression="&quot;You Do Not Have Enough Fury&quot;" newline="True"/>
+                                    <do expression="escolha &gt; furia1jog2 &amp;&amp; escolha &gt; furia2jog2">
+                                        <output expression="&quot;How Much Fury Do You Want To Transfer To Slime 2?&quot;" newline="True"/>
+                                        <input variable="escolha"/>
+                                    </do>
+                                </then>
+                                <else/>
+                            </if>
+                            <output expression="&quot;Player 2 Split! Dividing Fury...&quot;" newline="True"/>
+                            <assign variable="furia1jog2" expression="furia1jog2 - escolha"/>
+                            <assign variable="furia2jog2" expression="furia2jog2 + escolha"/>
+                        </then>
+                        <else>
+                            <output expression="&quot;How Much Fury Do You Want To Transfer To Slime 1?&quot;" newline="True"/>
+                            <input variable="escolha"/>
+                            <if expression="escolha &gt; furia1jog2 &amp;&amp; escolha &gt; furia2jog2">
+                                <then>
+                                    <output expression="&quot;You Do Not Have Enough Fury&quot;" newline="True"/>
+                                    <do expression="escolha &gt; furia1jog2 &amp;&amp; escolha &gt; furia2jog2">
+                                        <output expression="&quot;How Much Fury Do You Want To Transfer To Slime 1?&quot;" newline="True"/>
+                                        <input variable="escolha"/>
+                                    </do>
+                                </then>
+                                <else/>
+                            </if>
+                            <output expression="&quot;Player 2 Split! Dividing Fury...&quot;" newline="True"/>
+                            <assign variable="furia2jog2" expression="furia2jog2 - escolha"/>
+                            <assign variable="furia1jog2" expression="furia1jog2 + escolha"/>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <output expression="&quot;IMPOSSIBLE TO SPLIT!!&quot;" newline="True"/>
+                    <output expression="&quot;Your Fury Is Too High To Split, You Cannot Commit Suicide!!&quot;" newline="True"/>
+                </else>
+            </if>
+        </else>
+    </if>
+    <if expression="furia1jog1 &gt; 5">
+        <then>
+            <output expression="&quot;The Slime Of Player 1 Disintegrated&quot;" newline="True"/>
+            <assign variable="gosma1" expression="gosma1 - 1"/>
+            <assign variable="furia1jog1" expression="0"/>
+        </then>
+        <else>
+            <if expression="furia2jog1 &gt; 5">
+                <then>
+                    <output expression="&quot;The Slime Of Player 1 Disintegrated&quot;" newline="True"/>
+                    <assign variable="gosma1" expression="gosma1 - 1"/>
+                    <assign variable="furia2jog1" expression="0"/>
+                </then>
+                <else/>
+            </if>
+        </else>
+    </if>
+    <if expression="gosma1 = 0">
+        <then>
+            <output expression="&quot;!!Player 2 Won!!&quot;" newline="True"/>
+            <call expression="Again"/>
+        </then>
+        <else/>
+    </if>
+</while>
+<output expression="&quot;End Of Game. Play Again? (True) Yes (False) No&quot;" newline="True"/>
+```
+
+This translation maintains the structure of the original code while converting the output messages to English.
         </body>
     </function>
     <function name="snake" type="None" variable="">
