@@ -16,6 +16,7 @@ O objetivo do projeto é explorar lógica de programação e fluxogramas para cr
 # Tecnologias Utilizadas
 
 Flowgorithm
+
 Browser (para pesquisas)
 
 # Como Executar
